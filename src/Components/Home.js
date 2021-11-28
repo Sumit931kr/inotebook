@@ -1,4 +1,5 @@
 import React from 'react'
+import Notes from './Notes'
 
 export default function Home() {
     return (
@@ -21,7 +22,8 @@ export default function Home() {
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-         <h2>Your Notes</h2>
+      <Notes/>
+
          </div>
         </div>
     )
