@@ -6,7 +6,7 @@ const NoteState = (props) =>{
 
 const notesinitial = [
     {
-      "_id": "619c549d1ba46e403a8893bd",
+      "_id": "619c54b9d1ba4u86e403a8893bd",
       "user": "619b10fac043e4e0eae622c3",
       "title": "My Second Title  Updated",
       "description": "When you don't have a pencil YOu wrote with your pen updated ",
@@ -15,7 +15,7 @@ const notesinitial = [
       "__v": 0
     },
     {
-      "_id": "619c54a41ba46e403a8893c1",
+      "_id": "619c54aa41ba46e403a8893c1",
       "user": "619b10fac043e4e0eae622c3",
       "title": "My345 Title",
       "description": "THIS is34 my first josn file",
@@ -24,7 +24,7 @@ const notesinitial = [
       "__v": 0
     },
     {
-      "_id": "619c549d1ba46e403a8893bd",
+      "_id": "619c54a9d1ba46e403a8893bd",
       "user": "619b10fac043e4e0eae622c3",
       "title": "My Second Title  Updated",
       "description": "When you don't have a pencil YOu wrote with your pen updated ",
@@ -33,7 +33,7 @@ const notesinitial = [
       "__v": 0
     },
     {
-      "_id": "619c54a41ba46e403a8893c1",
+      "_id": "619c54a41ba46e403a88932c1",
       "user": "619b10fac043e4e0eae622c3",
       "title": "My345 Title",
       "description": "THIS is34 my first josn file",
@@ -42,7 +42,7 @@ const notesinitial = [
       "__v": 0
     },
     {
-      "_id": "619c549d1ba46e403a8893bd",
+      "_id": "619c549d61ba46e403a8893bd",
       "user": "619b10fac043e4e0eae622c3",
       "title": "My Second Title  Updated",
       "description": "When you don't have a pencil YOu wrote with your pen updated ",
@@ -51,7 +51,7 @@ const notesinitial = [
       "__v": 0
     },
     {
-      "_id": "619c54a41ba46e403a8893c1",
+      "_id": "619c54a441ba46e403a8893c1",
       "user": "619b10fac043e4e0eae622c3",
       "title": "My345 Title",
       "description": "THIS is34 my first josn file",
@@ -60,7 +60,7 @@ const notesinitial = [
       "__v": 0
     },
     {
-      "_id": "619c549d1ba46e403a8893bd",
+      "_id": "619c5439d1ba46e403a8893bd",
       "user": "619b10fac043e4e0eae622c3",
       "title": "My Second Title  Updated",
       "description": "When you don't have a pencil YOu wrote with your pen updated ",
@@ -69,7 +69,7 @@ const notesinitial = [
       "__v": 0
     },
     {
-      "_id": "619c54a41ba46e403a8893c1",
+      "_id": "619c54a41b1a46e403a8893c1",
       "user": "619b10fac043e4e0eae622c3",
       "title": "My345 Title",
       "description": "THIS is34 my first josn file",
@@ -78,7 +78,7 @@ const notesinitial = [
       "__v": 0
     },
     {
-      "_id": "619c549d1ba46e403a8893bd",
+      "_id": "619c549d1b1a46e403a8893bd",
       "user": "619b10fac043e4e0eae622c3",
       "title": "My Second Title  Updated",
       "description": "When you don't have a pencil YOu wrote with your pen updated ",
@@ -87,7 +87,7 @@ const notesinitial = [
       "__v": 0
     },
     {
-      "_id": "619c54a41ba46e403a8893c1",
+      "_id": "619c54a41ba46e4031a8893c1",
       "user": "619b10fac043e4e0eae622c3",
       "title": "My345 Title",
       "description": "THIS is34 my first josn file",
@@ -96,7 +96,7 @@ const notesinitial = [
       "__v": 0
     },
     {
-      "_id": "619c549d1ba46e403a8893bd",
+      "_id": "619c549d1ba46e4013a8893bd",
       "user": "619b10fac043e4e0eae622c3",
       "title": "My Second Title  Updated",
       "description": "When you don't have a pencil YOu wrote with your pen updated ",
@@ -105,7 +105,7 @@ const notesinitial = [
       "__v": 0
     },
     {
-      "_id": "619c54a41ba46e403a8893c1",
+      "_id": "619c54a41ba46e403a28893c1",
       "user": "619b10fac043e4e0eae622c3",
       "title": "My345 Title",
       "description": "THIS is34 my first josn file",
@@ -114,7 +114,7 @@ const notesinitial = [
       "__v": 0
     },
     {
-      "_id": "619c549d1ba46e403a8893bd",
+      "_id": "619c549d1ba46e403a88933bd",
       "user": "619b10fac043e4e0eae622c3",
       "title": "My Second Title  Updated",
       "description": "When you don't have a pencil YOu wrote with your pen updated ",
@@ -123,7 +123,7 @@ const notesinitial = [
       "__v": 0
     },
     {
-      "_id": "619c54a41ba46e403a8893c1",
+      "_id": "619c54a41ba46e403a889e3c1",
       "user": "619b10fac043e4e0eae622c3",
       "title": "My345 Title",
       "description": "THIS is34 my first josn file",
@@ -132,7 +132,7 @@ const notesinitial = [
       "__v": 0
     },
     {
-      "_id": "619c64c7b6af751a00765bf0",
+      "_id": "619c64c7b6af751a007653bf0",
       "user": "619b10fac043e4e0eae622c3",
       "title": "My Second Title",
       "description": "When you don't have a pencil YOu wrote with your pen",
