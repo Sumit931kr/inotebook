@@ -84,8 +84,9 @@ setnotes(notes.concat(note))
 
   // Delete a Note 
 
- const deletenote = () =>{
-   
+ const deletenote = (id) =>{
+   const newNotes = notes.filter((note) => { return note._id !== id})
+   setnotes(newNotes)
  }
 
 
