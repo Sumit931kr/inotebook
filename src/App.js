@@ -11,9 +11,6 @@ import Home from './Components/Home';
 import NoteState from './context/notes/NoteState';
 import Alert from './Components/Alert';
 
-
-
-
 function App() {
 
   return (
@@ -21,8 +18,8 @@ function App() {
       <NoteState>
         <Router>
           <Navbar />
-      
-          <Alert message = "This is Awosome React Course"/>
+
+          <Alert message="This is Awosome React Course" />
           <div className="container">
             <Routes>
               <Route exact path="/" element={<Home />} />
