@@ -44,20 +44,12 @@ setnotes(json)
       "auth-token" : 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjE5YjEwZmFjMDQzZTRlMGVhZTYyMmMzIn0sImlhdCI6MTYzNzU4ODYwNX0.R9H2bN9NAx7WhYv8HCKV9rhTRbTcszdOHBqbiULX5YE'
     },
  
-    body: JSON.stringify(title, description, tag)
+    body: JSON.stringify({title, description, tag})
   });
 
-// const json = response.json();
+const note = await response.json();
+console.log(note);
 
-  const note = {
-      "_id": "3419c64c7b6af751a007653bf0",
-      "user": "619b10fac043e4e0eae622c3",
-      "title": title,
-      "description": description,
-      "tag": "General",
-      "date": "2021-11-23T03:49:27.083Z",
-      "__v": 0
-    }
     setnotes(notes.concat(note))
   }
 
@@ -65,9 +57,25 @@ setnotes(json)
  //////////////// // Delete a Note  ////////////////
 
 
-  const deletenote = (id) => {
+  const deletenote = async (id) => {
+
+    // API call to Delete Note
+    const response = await fetch(`${host}/api/notes/deletenote/${id}`, {
+      method: 'DELETE', 
+      headers: {
+        'Content-Type': 'application/json',
+        "auth-token" : 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjE5YjEwZmFjMDQzZTRlMGVhZTYyMmMzIn0sImlhdCI6MTYzNzU4ODYwNX0.R9H2bN9NAx7WhYv8HCKV9rhTRbTcszdOHBqbiULX5YE'
+      },
+
+    });
+    const json = response.json();
+    console.log(json);
+
+// Delete in Front end
     const newNotes = notes.filter((note) => { return note._id !== id })
     setnotes(newNotes)
+
+
   }
 
 
@@ -77,6 +85,7 @@ setnotes(json)
 
     // APi Call to Edit a Note
 
+    // eslint-disable-next-line
   const response = await fetch(`${host}/api/notes/updatenote/${id}`, {
     method: 'POST', 
     headers: {
