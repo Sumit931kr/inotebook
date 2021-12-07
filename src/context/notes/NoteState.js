@@ -25,7 +25,6 @@ const NoteState = (props) => {
 
     });
     const json = await response.json();
-    // console.log(json);
     setnotes(json)
 
   }
@@ -48,8 +47,6 @@ const NoteState = (props) => {
     });
 
     const note = await response.json();
-    console.log(note);
-
     setnotes(notes.concat(note))
   }
 
@@ -68,8 +65,9 @@ const NoteState = (props) => {
       },
 
     });
+    
+    // eslint-disable-next-line
     const json = await response.json();
-    console.log(json);
 
     // Delete in Front end
     const newNotes = notes.filter((note) => { return note._id !== id })

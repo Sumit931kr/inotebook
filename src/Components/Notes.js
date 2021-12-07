@@ -24,7 +24,7 @@ const Notes = () => {
     }
 
     const handleonClick = (e) => {
-        console.log("Handle on click is just Clicked", note)
+      
         editnote(note.id, note.etitle, note.edescription, note.etag)
         refclose.current.click();
     }
@@ -52,27 +52,30 @@ const Notes = () => {
                             <form>
                                 <div className="mb-3">
                                     <label htmlFor="title" className="form-label my-3">Title</label>
-                                    <input type="text" className="form-control" id="etitle" name="etitle" value={note.etitle} aria-describedby="emailHelp" onChange={onchange} />
+                                    <input type="text" className="form-control" id="etitle" name="etitle" value={note.etitle} aria-describedby="emailHelp" onChange={onchange} minLength={3} required/>
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="description" className="form-label">Description</label>
-                                    <input type="text" className="form-control" onChange={onchange} id="edescription" value={note.edescription} name="edescription" />
+                                    <input type="text" className="form-control" onChange={onchange} id="edescription" value={note.edescription} name="edescription" minLength={5} required/>
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="tag" className="form-label">tag</label>
-                                    <input type="text" className="form-control" onChange={onchange} id="etag" value={note.etag} name="etag" />
+                                    <input type="text" className="form-control" onChange={onchange} id="etag" value={note.etag} name="etag" minLength={3} required />
                                 </div>
                             </form>
                         </div>
                         <div className="modal-footer">
                             <button type="button" ref={refclose} className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" className="btn btn-primary" onClick={handleonClick}>Update Note</button>
+                            <button  disabled={note.etitle.length<3 || note.edescription.length<5}  type="button" className="btn btn-primary" onClick={handleonClick}>Update Note</button>
                         </div>
                     </div>
                 </div>
             </div>
             <div className="row my-3">
                 <h2>Your Notes</h2>
+                <div className="container mx-3">
+                {notes.length === 0 && 'No notes to Display'}
+                </div>
                 {notes.map((note) => {
                     return <Noteitem key={note._id} updatenote={updatenote} note={note} />
                 })}
