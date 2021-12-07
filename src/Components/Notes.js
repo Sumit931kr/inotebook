@@ -5,26 +5,28 @@ import Noteitem from './Noteitem';
 
 const Notes = () => {
     const context = useContext(noteContext);
-    const { notes, getNotes } = context;
+    const { notes, getNotes, editnote } = context;
     useEffect(() => {
         getNotes();
         // eslint-disable-next-line 
     }, [])
 
     const ref = useRef(null)
-    const [note, setnote] = useState({ etitle: "", edescription: "", etag: "" })
-    
-    
+    const refclose = useRef(null)
+    const [note, setnote] = useState({ id: "", etitle: "", edescription: "", etag: "" })
+
+
     const updatenote = (currentnote) => {
         ref.current.click();
-        setnote({ etitle : currentnote.title, edescription: currentnote.description, etag: currentnote.tag})
+
+        setnote({ id: currentnote._id, etitle: currentnote.title, edescription: currentnote.description, etag: currentnote.tag })
 
     }
 
     const handleonClick = (e) => {
         console.log("Handle on click is just Clicked", note)
-        e.preventDefault();
-    
+        editnote(note.id, note.etitle, note.edescription, note.etag)
+        refclose.current.click();
     }
     const onchange = (e) => {
         setnote({ ...note, [e.target.name]: e.target.value })
@@ -35,7 +37,7 @@ const Notes = () => {
         <>
             <AddNote />
 
-            <button ref={ref}  type="button" className="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <button ref={ref} type="button" className="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Launch demo modal
             </button>
 
@@ -63,7 +65,7 @@ const Notes = () => {
                             </form>
                         </div>
                         <div className="modal-footer">
-                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" ref={refclose} className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                             <button type="button" className="btn btn-primary" onClick={handleonClick}>Update Note</button>
                         </div>
                     </div>
