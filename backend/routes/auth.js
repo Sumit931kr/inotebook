@@ -12,14 +12,14 @@ const fetchUser = require('../Middleware/fetchUser');
 router.post('/createUser', [
   body('name', 'Enter a Valid Name').isLength({ min: 3 }),
   body('email', 'Enter a Valid Email ').isEmail(),
-  body('password', 'Password Must be atleast % character').isLength({ min: 5 }),
+  body('password', 'Password Must be atleast 5 character').isLength({ min: 5 }),
 ], async (req, res) => {
-
+  let success = false;
   // If there are errros, return Bad request and the error
 
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
-    return res.status(400).json({ errors: errors.array() });
+    return res.status(400).json({ success, errors: errors.array() });
   }
 
 
@@ -29,7 +29,7 @@ router.post('/createUser', [
     let user = await User.findOne({ email: req.body.email })
     console.log(user);
     if (user) {
-      return res.status(400).json({ error: " 32 Sorry a User with email already exits" })
+      return res.status(400).json({ success, error: " 32 Sorry a User with email already exits" })
     }
 
     // Making Password  Vauranable
@@ -51,7 +51,10 @@ router.post('/createUser', [
 
 
     const authtoken = jwt.sign(data, JWT_SECRET);
-    res.json({ authtoken })
+
+    // res.json(user)
+    success = true;
+    res.json({ success, authtoken })
 
   } catch (error) {
     console.error(error.message);
