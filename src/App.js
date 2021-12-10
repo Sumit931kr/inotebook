@@ -1,4 +1,3 @@
-// import { useState } from 'react';
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -12,11 +11,21 @@ import NoteState from './context/notes/NoteState';
 import Alert from './Components/Alert';
 import Login from './Components/Login';
 import Signup from './Components/Signup';
-
-
-
-
+import { useState } from 'react';
 function App() {
+
+const [alert, setalert] = useState(null)
+
+const showalert = (message, type)=> {
+  setalert({
+msg : message,
+type : type,
+  }
+ )
+ setTimeout(() => {
+   setalert(null)
+ }, 1500);
+}
 
   return (
     <>
@@ -24,13 +33,13 @@ function App() {
         <Router>
           <Navbar />
 
-          <Alert message="This is Awosome React Course" />
+          <Alert alert={alert}/>
           <div className="container">
             <Routes>
-              <Route exact path="/" element={<Home />} />
+              <Route exact path="/" element={<Home showalert={showalert}/>} />
               <Route exact path="/about" element={<About />} />
-              <Route exact path="/login" element={<Login />} />
-              <Route exact path="/signup" element={<Signup />} />
+              <Route exact path="/login" element={<Login showalert={showalert}/>} />
+              <Route exact path="/signup" element={<Signup showalert={showalert}/>} />
             </Routes>
 
           </div>
